@@ -1,0 +1,17 @@
+create table student(id integer,name varchar(10),dob date,mark integer);
+insert into student values(1,"sharmi",'1997-09-16',98);
+select * from student;
+insert into student(mark,dob,name,id) values(99,'1998-04-25','siva',2);
+select * from student;
+insert into student values(3,'suji','1998-03-22',98);
+select mark from student where mark>97;
+select name from student where dob>'1997-09-16';
+update student set mark=mark+1;
+select * from student;
+select id||mark from student;
+update student set mark=(mark-1)*2;
+select * from student;
+insert into student values(4,'shanmu',null,0);
+select * from student;
+select * from student where dob is not null;
+select id as rno from student;
