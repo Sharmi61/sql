@@ -1,0 +1,25 @@
+create table student(id int primary key,sname varchar(10),age int default 21);
+insert into student values(1,'sharmi',21);
+insert into student values(2,'shama',22);
+insert into student values(3,'shanmu',22);
+insert into student values(4,'aelva',21);
+create table dept(did int,dname varchar(10));
+insert into dept values(3,'cse');
+insert into dept values(5,'ece');
+select * from student where age=21 and id=1;
+select * from student group by id having sum(age)=44;
+select distinct age from student;
+create table studept as select dept.dname,student.id,student.sname from dept,student;
+select * from studept;
+create table  uniqueage as select * from student where age=21;
+select * from uniqueage;
+create table new as select * from student where not exists(select * from student where id!=1);
+select * from new;
+CREATE table child(
+    dname varchar(60) NOT NULL,
+    c_id int FOREIGN KEY REFERENCES student(id)
+);
+insert into child values(1,'cse');
+insert into child values(2,'ece');
+select * from child;
+
